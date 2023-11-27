@@ -38,6 +38,8 @@ namespace Libreria_DGGR
 
             //configurar el servicio para que pueda ser usado 
             services.AddTransient<BookService>();
+            services.AddTransient<AuthorsService>();
+            services.AddTransient<PublishersService>();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Libreria_DGGR", Version = "v1" });
@@ -64,7 +66,7 @@ namespace Libreria_DGGR
             {
                 endpoints.MapControllers();
             });
-            AppDbInitializer.Seed(app);
+            //AppDbInitializer.Seed(app);
         }
     }
 }
